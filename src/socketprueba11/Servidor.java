@@ -1,9 +1,13 @@
-package socketprueba06;
+package socketprueba11;
 /*
- * Tenemos el menú del cliente. Una vez se conecta el mensaje llega a todos los clientes.
- * Siguiente paso: Que cuando el cliente se conecta el Servidor compruebe credenciales
- * Siguiente paso: Que si los credenciales fallan, tenga 3 intentos (debe volver al menú del cliente)
- * */
+ * CONTINUAR POR AQUÍ
+Hemos conseguido crear un chat con login que funcione.
+Hemos metido lo de los 3 intentos y parece que funciona bien. Si fallas 3 veces se acaba. Si fallas y luego aciertas, deja.
+Hemos conseguido que el logueo se haga desde un fichero que tiene nombre de usuario, clave y rol.
+-Solucionar: 
+---Que si metes mal el localhost o el puerto esté controlado
+---Que puedas meter localhost e ip
+*/
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +28,6 @@ public class Servidor {
 		while (true) {
 			Socket cliente = ss.accept(); //a la escucha
 			ob.anadirLista(cliente);
-			
 			Hilo_Servidor hilo = new Hilo_Servidor(cliente, ob);
 			hilo.start();
 		}

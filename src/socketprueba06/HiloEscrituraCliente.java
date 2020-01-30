@@ -18,18 +18,18 @@ public class HiloEscrituraCliente extends Thread{
 		try {
 			os = servidor.getOutputStream();
 			DataOutputStream dos = new DataOutputStream(os);
-			//System.out.println("Cliente: Escriba un mensaje que enviar al servidor");
-			Scanner teclado = new Scanner(System.in);
-			String cadena = "";
-			while (true) {
-				cadena = teclado.nextLine();
-				dos.writeUTF(cadena);
-			}
-
+		System.out.println("Cliente: Escriba un mensaje que enviar al servidor");
+		Scanner teclado = new Scanner(System.in);
+		String cadena = "";
+		while (true) {
+			cadena = teclado.nextLine();
+			dos.writeUTF(cadena);
+		}
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
 	}
 }

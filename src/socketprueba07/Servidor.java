@@ -1,8 +1,13 @@
-package socketprueba06;
+package socketprueba07;
 /*
- * Tenemos el menú del cliente. Una vez se conecta el mensaje llega a todos los clientes.
- * Siguiente paso: Que cuando el cliente se conecta el Servidor compruebe credenciales
- * Siguiente paso: Que si los credenciales fallan, tenga 3 intentos (debe volver al menú del cliente)
+ * Logro: Hemos conseguido que el cliente se loguee y contecte y envíe y el server le reciba
+ * ----LO QUE PRETENDÍA
+ *  * ACTUAL: TRATAR DE CORRER EL HILO LECTURA CLIENTE DESPUÉS DE VALIDAR CREDENCIALES
+ * Estamos tratando de hacer:
+ * -Cuando el cliente se conecta debe enviar (su socket, nombre, contraseña)
+ * -El servidor debe comprobarlo en un fichero, y extraerá su rol
+ * -Que cuando el cliente se conecta el Servidor compruebe credenciales
+ * -Que si los credenciales fallan, tenga 3 intentos (debe volver al menú del cliente)
  * */
 import java.io.DataInputStream;
 import java.io.IOException;

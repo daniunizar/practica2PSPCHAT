@@ -1,4 +1,4 @@
-package socketprueba06;
+package socketprueba07;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class Cliente {
 		//una conexión con host y puerto
 		String host = null; //Introducir localhost por teclado
 		int puerto = 0; //Introducir 6000 por teclado
-		String ob;
+		String ob; //objeto compartido a todos los clientes, con la lista de ellos actualizada ¿Util para enviar privados o sileciar?
 		String nombreUsuario = null;
 		String clave = null;
 		int eleccionMenu;
@@ -57,10 +57,11 @@ public class Cliente {
 					System.out.println("Realizando conexión");
 					Socket servidor = new Socket(host, puerto);
 					HiloLecturaCliente hiloLectura = new HiloLecturaCliente(servidor);
-					HiloEscrituraCliente hiloEscritura = new HiloEscrituraCliente(servidor);
+					HiloEscrituraCliente hiloEscritura = new HiloEscrituraCliente(servidor, nombreUsuario, clave);
 					hiloEscritura.start();
 					hiloLectura.start();
 					conectadoAlChat=true; //Salimos del bucle del menú de usuario
+					System.out.println("Salimos del bucle del menú de cliente");
 				} //end if case 5
 				else {
 					if (host == null) System.out.println("\tDebe introducir un valor para la IP");
@@ -73,7 +74,7 @@ public class Cliente {
 					System.out.println("Programa finalizado");
 					System.exit(0);
 				}//end switch
-
+System.out.println("Ya hemos salido del bucle del menú del cliente");
 			} //end try
 			catch (Exception e){
 				System.out.println("Ha introducido un valor no válido");

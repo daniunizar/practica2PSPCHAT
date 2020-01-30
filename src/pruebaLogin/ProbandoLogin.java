@@ -16,7 +16,7 @@ public class ProbandoLogin {
 		BufferedReader br = new BufferedReader(fr);
 		String linea="";
 
-		Usuario usuario = new Usuario("Stuka")
+		//Usuario usuario = new Usuario("Stuka")
 		
 		while ((linea = br.readLine()) != null) {
 			System.out.println(linea);

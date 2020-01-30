@@ -1,4 +1,4 @@
-package socketprueba06;
+package socketprueba07;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
